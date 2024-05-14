@@ -11,7 +11,8 @@ public class Account {
 	public Account() {}
 
 	// 전체값을 넘겨받는 생성자
-	public Account(String ano, String owner, int balance, String password) {
+	public Account(String ano, String owner, 
+				  int balance, String password) {
 		this.ano = ano;
 		this.owner = owner;
 		this.balance = balance;

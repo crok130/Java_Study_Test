@@ -60,72 +60,21 @@ public class BookManagement {
 	// 도서 등록
 	public void  registerBook() {
 		System.out.println("1. 도서등록");
-		String title = getData("도서 제목을 입력하세요 > ");
-		String author = getData("저자 제목을 입력하세요 > ");
-		Book book = new Book(count,title,author);
-		books[count - 1] = book;
-		count++;
-		System.out.println("도서가 등록되었습니다");
-		
 	}
 	
 	// 도서 목록 출력
 	public void selectBook() {
 		System.out.println("2. 도서목록");
-		if(count == 1) {
-			System.out.println("등록된 도서가 없습니다");
-		}else {
-			for(int i = 0; i < count -1; i++) {
-				if(books[i] != null) { 
-					printBookInfo(books[i]);
-				}
-			}
-		}
 	}
 
 	// 도서 정보 수정
 	public void updateBook() {
-		boolean isRun = true;
 		System.out.println("3. 도서수정");
-		if(count == 1) {
-			System.out.println("등록된 도서가 없습니다");
-		}else {
-			for(int i = 0; i < count -1; i++) {
-				printBookInfo(books[i]);
-			}
-		}
-		int num = getSelectNum("수정할 책의 도서 관리 번호를 입력해주세요 > ");
-		Book a = findBook(num);
-		while(isRun) {
-			System.out.println("===============================");
-			System.out.println("1.제목수정 | 2. 저자수정 | 3.수정완료");
-			System.out.println("===============================");
-			selectNo = getSelectNum("번호를 선택하세요 > ");
-			switch(selectNo) {
-				case 1 :
-					System.out.println("제목수정");
-					String newtitle = getData("제목 입력");
-					a.title = newtitle;
-					break;
-				case 2 :
-					System.out.println("저자수정");
-					String newauthor = getData("저자입력");
-					a.author = newauthor;
-					break;
-				case 3 :
-					isRun = false;
-					break;
-			}
-			
-		}
 	}
 	
 	// 도서 목록에서 책 정보 삭제
 	public void deleteBook() {
 		System.out.println("4. 도서삭제");
-		selectNo = getSelectNum("삭제할 책의 도서관리번호를 입력해주세요 > ");
-		books[selectNo -1] = null;
-		System.out.println("삭제완료");
 	}
 	
 	// 책 정보 출력
@@ -135,11 +84,6 @@ public class BookManagement {
 	
 	// 도서관리번호로 책 정보 찾기
 	public Book findBook(int num) {
-		for(int i = 0; i < books.length; i++) {
-			if(books[i] != null) {
-				return books[i];
-			}
-		}
 		return null;
 	}
 	

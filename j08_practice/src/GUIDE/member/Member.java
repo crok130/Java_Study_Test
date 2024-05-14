@@ -11,12 +11,9 @@ public class Member {
 	// 회원 비밀번호
 	String mPw;
 	
-	boolean login = true;
 	
 	Member() {}
-	Member(boolean login) {
-		this.login = login;
-	}
+
 	// 회원 로그인 및 정보 검색용 생성자
 	Member(String mId, String mPw) {
 		this.mId = mId;

@@ -7,7 +7,7 @@ public class BankApplication {
 	Account[] account = new Account[100];
 	
 	Scanner sc = new Scanner(System.in);
-	int count = 0;
+	
 	BankApplication(){
 		run();
 	}
@@ -50,71 +50,23 @@ public class BankApplication {
 	
 	//계좌생성
 	void createAccount() {
-		  System.out.println("계좌번호 입력: ");
-	        String ano = sc.next();
-	        System.out.println("계좌주 입력: ");
-	        String owner = sc.next();
-	        System.out.println("초기 입금액 입력: ");
-	        int balance = sc.nextInt();
-	        System.out.println("비밀번호 입력: ");
-	        String password = sc.next();
-	        
-	        account[count] = new Account(ano, owner, balance, password);
-	        count++;
-	        System.out.println("계좌가 생성되었습니다.");
+		
 	}
 	// 계좌조회
 	void selectAccount() {
-        System.out.println("조회할 계좌번호 입력: ");
-        String ano = sc.next();
-        System.out.println("비밀번호 입력: ");
-        String password = sc.next();
-        Account a = this.findAccount(ano,password);
-        if(a != null){
-        	System.out.println(a.toString());
-        }
-        	
-        
-    }
-      
+	}
 	
 	// 예금
 	void deposit() {
-        System.out.println("조회할 계좌번호 입력: ");
-        String ano = sc.next();
-        System.out.println("비밀번호 입력: ");
-        String password = sc.next();
-		Account a = this.findAccount(ano,password);
-        if(a != null){
-        	System.out.println("예금하실 금액 : ");
-        	int balance = sc.nextInt();
-        	a.balance += balance;
-        }
-       
+		
 	}
 	//출금
 	void withdraw() {
-        System.out.println("조회할 계좌번호 입력: ");
-        String ano = sc.next();
-        System.out.println("비밀번호 입력: ");
-        String password = sc.next();
-		Account a = this.findAccount(ano,password);
-        if(a != null){
-        	System.out.println("예금하실 금액 : ");
-        	int balance = sc.nextInt();
-        	a.balance -= balance;
-        }
+		
 	}
 	
 	// 계좌번호와 비밀번호가 일치하는 Account 객체를 찾아서 반환 
 	Account findAccount(String ano, String password) {
-		for(int i = 0; i < account.length; i++) {
-			if(account[i] != null) {
-				if(ano.equals(account[i].ano) && password.equals(account[i].password)) {
-					return account[i];
-				}
-			}
-		}
 		return null;
 	}
 	
