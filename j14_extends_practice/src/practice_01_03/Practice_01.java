@@ -10,14 +10,24 @@ public class Practice_01 {
 		
 		// sample id
 		String myId = "id001";
+		System.out.println(myId.toString());
+		System.out.println(myId);
+		// 객체가 저장되어 있는 메모리 주소를 10진법의 int type의 정수로 반환
+		// null 은 0을 반환
+		int address = System.identityHashCode(myId);
+		System.out.println("myId address : " + address);
+		
+		String tempId = "id001";
+		address = System.identityHashCode(tempId);
+		System.out.println("tempId address : " + address);
+		
+		System.out.println(myId == tempId);
 		
 		System.out.print("아이디 입력>");
+		
 		String id = sc.next();
 		
-		
-		// if(myId == id) {
-		// 문자열 비교연산을 할땐 == 가 아니라 equals 가 들어가야해서 원하는결과가 나오지않음
-		if(id.equals(myId)) {
+		if(myId.equals(id)) {
 			System.out.println("아이디가 일치합니다.");
 		}else {
 			System.out.println("아이디가 일치하지 않습니다.");

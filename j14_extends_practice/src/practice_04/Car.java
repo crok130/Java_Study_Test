@@ -19,11 +19,12 @@ public class Car extends Object
 	void changeGear(int gear){
 		this.gear = gear;
 	}
-
+	// alt + s , v
 	@Override
 	public String toString() {
 		return "Car [color=" + color + ", speed=" + speed + ", gear=" + gear + "]";
 	}
 	
+	// alt + s, s, s
 	
 }
